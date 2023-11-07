@@ -127,6 +127,12 @@ const startGame = function () {
 
   let playerScore = calcPoints(player.hand).total;
   showHand(player);
+  // for extra  credit:
+  // Check for player's blackjack.
+  // If the player gets exactly 21 after drawing her first 2 cards, the player immediately wins
+  if (playerScore === 21) {
+    return "Player wins with a Blackjack!";
+  }
   while (playerScore < 21 && confirm(getMessage(playerScore, dealer.hand[0]))) {
     player.drawCard();
     playerScore = calcPoints(player.hand).total;
@@ -138,6 +144,13 @@ const startGame = function () {
   console.log(`Player stands at ${playerScore}`);
 
   let dealerScore = calcPoints(dealer.hand).total;
+  showHand(dealer)
+  // for extra  credit:
+  // Check for dealer's blackjack
+  // If the dealer draws exactly 21 after drawing her first 2 cards, the dealer immediately wins.
+  if (dealerScore === 21) {
+    return "Dealer wins with a Blackjack!";
+  }
   while (dealerScore < 21 && dealerShouldDraw(dealer.hand)) {
     dealer.drawCard();
     dealerScore = calcPoints(dealer.hand).total;
