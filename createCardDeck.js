@@ -15,19 +15,19 @@
       let displayVal = "";
 
       switch (j) {
-        case j === 1:
+        case 1:
           displayVal = "Ace";
           break;
-        case j > 1 && j <= 10:
-          displayVal = j;
-          break;
-        case j === 11:
+        // case j > 1 && j <= 10:  // This is not necessary since it is in the default case
+        //   displayVal = j;
+        //   break;
+        case 11:
           displayVal = "Jack";
           break;
-        case j === 12:
+        case 12:
           displayVal = "Queen";
           break;
-        case j === 13:
+        case 13:
           displayVal = "King";
           break;
         default:
